@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
-// import { Header } from '../../components/Header';
 import { Button } from '../../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
 import { StoreForm } from './StoreForm';
@@ -28,15 +27,17 @@ export const AdminDashboard: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
+  // Keep only this useEffect - it handles both cases properly
+  useEffect(() => {
+    if (currentUser) {
+      loadStores();
+    }
+  }, [currentUser]);
+
   // If user is not authenticated, show login
   if (!currentUser) {
     return <Login />;
   }
-
-  // Load stores from Firestore
-  useEffect(() => {
-    loadStores();
-  }, []);
 
   const loadStores = async () => {
     try {

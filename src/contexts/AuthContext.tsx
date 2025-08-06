@@ -19,7 +19,6 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Session timeout duration in milliseconds (30 minutes)
 const SESSION_TIMEOUT = 30 * 60 * 1000;
-const ACTIVITY_THROTTLE = 60 * 1000; // 1 minute throttle
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
@@ -33,8 +32,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const lastActivityRef = useRef<number>(Date.now());
-  const throttleRef = useRef<NodeJS.Timeout | null>(null);
 
   const login = async (email: string, password: string) => {
     await signInWithEmailAndPassword(auth, email, password);
@@ -45,10 +42,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
-    }
-    if (throttleRef.current) {
-      clearTimeout(throttleRef.current);
-      throttleRef.current = null;
     }
     await signOut(auth);
   }, []);
@@ -61,9 +54,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       clearTimeout(timeoutRef.current);
     }
 
-    // Update last activity time
-    lastActivityRef.current = Date.now();
-
     // Set new timeout
     timeoutRef.current = setTimeout(async () => {
       console.log('Session timeout - logging out user');
@@ -71,29 +61,17 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }, SESSION_TIMEOUT);
   }, [currentUser, logout]);
 
-  // Optimized activity tracking with throttling
+  // Simplified activity tracking - only track essential events
   useEffect(() => {
     if (!currentUser) return;
 
     const resetTimeoutOnActivity = () => {
-      const now = Date.now();
-      
-      // Only reset if it's been more than the throttle time since last activity
-      if (now - lastActivityRef.current > ACTIVITY_THROTTLE) {
-        if (throttleRef.current) {
-          clearTimeout(throttleRef.current);
-        }
-        
-        throttleRef.current = setTimeout(() => {
-          resetTimeout();
-        }, 1000); // Small delay to batch multiple events
-      }
+      resetTimeout();
     };
 
-    // Reduced event listeners for better performance
-    const events = ['mousedown', 'keypress', 'scroll', 'touchstart'];
+    // Reduced to only essential events for better performance
+    const events = ['mousedown', 'keydown'];
     
-    // Add event listeners with passive option for better performance
     events.forEach(event => {
       document.addEventListener(event, resetTimeoutOnActivity, { passive: true });
     });
@@ -101,16 +79,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Initial timeout setup
     resetTimeout();
 
-    // Cleanup
     return () => {
       events.forEach(event => {
         document.removeEventListener(event, resetTimeoutOnActivity);
       });
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
-      }
-      if (throttleRef.current) {
-        clearTimeout(throttleRef.current);
       }
     };
   }, [currentUser, resetTimeout]);
@@ -120,15 +94,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setCurrentUser(user);
       setLoading(false);
       
-      if (!user) {
-        if (timeoutRef.current) {
-          clearTimeout(timeoutRef.current);
-          timeoutRef.current = null;
-        }
-        if (throttleRef.current) {
-          clearTimeout(throttleRef.current);
-          throttleRef.current = null;
-        }
+      if (!user && timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+        timeoutRef.current = null;
       }
     });
 
@@ -145,7 +113,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   return (
     <AuthContext.Provider value={value}>
-      {!loading && children}
+      {children}
     </AuthContext.Provider>
   );
 };
