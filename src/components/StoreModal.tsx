@@ -39,18 +39,14 @@ export const StoreModal: React.FC<StoreModalProps> = ({ store, onClose }) => {
         </div>
         
         {/* Phone number and location at bottom with icons */}
-        <div className="flex items-center px-6 pb-6 space-y-3">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-full flex items-center justify-center">
+        <div className="flex items-center px-6 gap-6 pb-6 space-y-3">
+          <div className="flex gap-2 bg-[#f5f5f5] p-2 px-4 rounded-3xl">
             <img src="/phone.svg" alt="" />
-            </div> 
             <p className="font-sans text-gray-700">{store.phoneNumber}</p>
           </div>
-          
-          <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full flex items-center justify-center">
+
+          <div className="flex gap-2 bg-[#f5f5f5] p-2 px-4 rounded-3xl">
             <img src="/email.svg" alt="" />
-            </div> 
             <p className="font-sans text-gray-700">{store.emailAddress}</p>
           </div>
         </div>

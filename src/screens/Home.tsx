@@ -1,15 +1,43 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Button } from "../components/ui/button";
+import { storeService } from "../services/storeService";
+import { Store } from "./admin/AdminDashboard";
 
 export const Home: React.FC = () => {
-  const storeLocations = [
-    { name: "Shoprite", location: "Nationwide", },
-    { name: "Freetown Mall", location: "Freetown", },
-    {name: "Viscosity Plaza", location: "Freetown", }
-  ];
+  const [stores, setStores] = useState<Store[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  // Load stores from backend
+  useEffect(() => {
+    const loadStores = async () => {
+      try {
+        setLoading(true);
+        const storesData = await storeService.getStores();
+        setStores(storesData);
+      } catch (error: any) {
+        setError('Failed to load stores');
+        console.error('Error loading stores:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadStores();
+
+    // Optional: Set up real-time listener for store updates
+    const unsubscribe = storeService.subscribeToStores((updatedStores) => {
+      setStores(updatedStores);
+      setLoading(false);
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   return (
     <div className="bg-[#212c2d] min-h-screen">
@@ -73,7 +101,7 @@ export const Home: React.FC = () => {
           <section className="relative w-full bg-[#e15822] transform -skew-y-6">
             <div className="container mx-auto px-4 py-12 transform skew-y-6">
               <div className="text-center text-white">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4">
+                <h2 className="text-2xl font-sans sm:text-3xl md:text-4xl mb-4">
                   <span className="italic">Number 1 </span>
                   Supplier Of Charcoal<br />Briquettes And Shisha In
                 </h2>
@@ -103,7 +131,7 @@ export const Home: React.FC = () => {
                 alt="Coconut Icon" 
                 className="w-16 h-16 mx-auto mb-6"
               />
-              <h2 className="font-['Mikoena-Regular'] text-white text-2xl sm:text-3xl md:text-4xl mb-4">
+              <h2 className="font-sans text-white text-2xl sm:text-3xl md:text-4xl mb-4">
                 Made From Coconut Waste & Other<br />Renewable Sources
               </h2>
               <p className="font-sans text-white/70 text-sm sm:text-base max-w-[600px] mx-auto">
@@ -184,19 +212,35 @@ export const Home: React.FC = () => {
                   />
                 </div>
                 <div className="md:w-1/2">
-                  <h2 className="text-5xl font-bold sm:text-5xl md:text-7xl mb-8">
+                  <h2 className="text-5xl font-sans font-bold sm:text-5xl md:text-7xl mb-8">
                     Our Stores
                   </h2>
                   
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                    {storeLocations.map((store, index) => (
-                      <div key={index} className="bg-white p-10 rounded-xl text-center">
-                        <h3 className="font-sans font-bold text-[#212c2d] text-xl">{store.name}</h3>
-                        {store.location && (
-                          <p className="font-sans text-gray-600 text-sm">{store.location}</p>
-                        )}
+                    {loading ? (
+                      // Loading state
+                      <div className="col-span-3 text-center text-white">
+                        <p>Loading stores...</p>
                       </div>
-                    ))}
+                    ) : error ? (
+                      // Error state
+                      <div className="col-span-3 text-center text-red-400">
+                        <p>{error}</p>
+                      </div>
+                    ) : stores.length === 0 ? (
+                      // Empty state
+                      <div className="col-span-3 text-center text-white">
+                        <p>No stores available</p>
+                      </div>
+                    ) : (
+                      // Display stores (limit to first 3 for homepage)
+                      stores.slice(0, 3).map((store) => (
+                        <div key={store.id} className="bg-white p-10 rounded-xl text-center">
+                          <h3 className="font-sans font-bold text-[#212c2d] text-xl">{store.name}</h3>
+                          <p className="font-sans text-gray-600 text-sm">{store.city}, {store.country}</p>
+                        </div>
+                      ))
+                    )}
                   </div>
                   
                   <div className="flex justify-end">

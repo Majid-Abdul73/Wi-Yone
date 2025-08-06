@@ -81,7 +81,7 @@ export const Product = (): JSX.Element => {
                       {/* About Tab */}
                       <TabsContent value="about" className="mt-0">
                         <div className="text-white">
-                          <h2 className="font-bold text-3xl md:text-4xl mb-6">
+                          <h2 className="font-bold font-sans text-3xl md:text-4xl mb-6">
                             Made From Coconut Waste & <br /> Other Sources
                           </h2>
                           
@@ -95,10 +95,10 @@ export const Product = (): JSX.Element => {
                       {/* Uses Tab */}
                       <TabsContent value="uses" className="mt-0">
                         <div className="text-white">  
-                          <h2 className="font-bold text-3xl md:text-4xl mb-2 italic">
+                          <h2 className="font-bold font-sans text-3xl md:text-4xl mb-2 italic">
                             {usesContent.title}
                           </h2>
-                          <h3 className="font-bold text-3xl md:text-4xl mb-6">
+                          <h3 className="font-bold font-sans text-3xl md:text-4xl mb-6">
                             {usesContent.subtitle}
                           </h3>
                           
@@ -112,11 +112,11 @@ export const Product = (): JSX.Element => {
                       {/* Sizes Tab */}
                       <TabsContent value="sizes" className="mt-0">
                         <div className="text-white">
-                          <h3 className="font-normal text-base mb-4">
+                          <h3 className="font-normal font-sans text-base mb-4">
                             {sizesContent.title}
                           </h3>
                           
-                          <h2 className="font-bold text-3xl md:text-4xl">
+                          <h2 className="font-bold font-sans text-3xl md:text-4xl">
                             {sizesContent.sizes}
                           </h2>
                         </div>
@@ -132,7 +132,6 @@ export const Product = (): JSX.Element => {
                         className="relative z-[9999] w-full max-w-[350px] md:max-w-[450px] mx-auto -mt-60"
                         alt="Wi yone sample"
                         src="/WiYoneSample.svg"
-                        // src="/images/WiYoneSample.jpg"
                       />
                     </div>
                   </div>
