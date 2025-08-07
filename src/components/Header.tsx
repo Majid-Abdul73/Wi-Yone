@@ -15,7 +15,7 @@ export const Header: React.FC<HeaderProps> = ({ title }) => {
   };
 
   return (
-    <header className="w-full flex justify-between items-center py-4 sm:py-6 md:py-8 lg:py-12 xl:py-16 px-3 sm:px-4 md:px-8 lg:px-16 xl:px-32 bg-[#212c2d] relative">
+    <header className="w-full flex justify-between items-center py-4 sm:py-8 md:py-6 lg:py-12 xl:py-16 px-3 sm:px-6 md:px-8 lg:px-16 xl:px-32 pt- sm:pt-12 md:pt-8 lg:pt-12 xl:pt-16 bg-[#212c2d] relative">
       <Link to="/">
         <div className="flex items-center">
           <img
@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ title }) => {
       {/* Center Title */}
       {title && (
         <div className="absolute left-1/2 transform -translate-x-1/2">
-          <h1 className="text-white font-sans font-bold text-lg sm:text-xl md:text-lg lg:text-xl xl:text-xl tracking-wider">
+          <h1 className="text-white font-mikoena font-bold text-lg sm:text-xs md:text-sm lg:text-lg xl:text-lg tracking-wider">
             {title}
           </h1>
         </div>

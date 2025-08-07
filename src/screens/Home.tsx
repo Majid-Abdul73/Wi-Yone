@@ -49,27 +49,53 @@ export const Home: React.FC = () => {
           <Header />
           
           {/* Hero Section with Fire for Longer */}
-
           {/* coalsArtboard.svg bg */}
-          <section className="relative w-full min-h-[90vh] bg-contain bg-center bg-no-repeat" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}>
+          {/* <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] bg-contain bg-center bg-no-repeat" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}>
             <div className="absolute inset-0 bg-opacity-30"></div>
-            <div className="relative z-10 container mx-auto px-4 py20">
-              <div className="flex flex-col lg:flex-row items-center justify-between">
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12"> */}
                 {/* Left side - Text content */}
-                <div className="-mt-44 ml-12">
+                {/* <div className="-mt-16 sm:-mt-24 md:-mt-32 lg:-mt-44 ml-4 sm:ml-8 lg:ml-12 flex-shrink-0">
                   <img 
                     src="/fireforlonger.svg"
-                      alt="Fire For Longer" 
-                      className="w-[150px] sm:w-[250px] md:w-[250px]"
-                    />
-                </div>
+                    alt="Fire For Longer" 
+                    className="w-[120px] sm:w-[180px] md:w-[220px] lg:w-[250px] xl:w-[280px]"
+                  />
+                </div> */}
 
                 {/* Right side - Product image */}
-                <div className="lg:w flex justify-center -mt-24">
+                {/* <div className="w-full lg:w-auto flex justify-center -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-24">
                   <img 
                     src="/WiYoneSample.svg" 
                     alt="Wi Yone Charcoal Package" 
-                    className="max-w-2xl w-full h-auto"
+                    className="max-w-full w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:max-w-2xl h-auto"
+                  />
+                </div>
+              </div>
+            </div>
+          </section> */}
+
+          {/* coalsArtboard.svg bg */}
+          <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] bg-contain bg-center bg-no-repeat" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}>
+            <div className="absolute inset-0 bg-opacity-30"></div>
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
+              {/* Changed to always be flex-row instead of flex-col on small screens */}
+              <div className="flex flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-12">
+                {/* Left side - Text content */}
+                <div className="-mt-16 sm:-mt-28 md:-mt-32 lg:-mt-44 flex-shrink-0">
+                  <img 
+                    src="/fireforlonger.svg"
+                    alt="Fire For Longer" 
+                    className="w-[80px] sm:w-[140px] md:w-[180px] lg:w-[250px] xl:w-[280px]"
+                  />
+                </div>
+
+                {/* Right side - Product image */}
+                <div className="flex justify-center -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-24">
+                  <img 
+                    src="/WiYoneSample.svg" 
+                    alt="Wi Yone Charcoal Package" 
+                    className="max-w-full w-[180px] sm:w-[280px] md:w-[400px] lg:w-[600px] xl:max-w-2xl h-auto"
                   />
                 </div>
               </div>
@@ -77,39 +103,50 @@ export const Home: React.FC = () => {
           </section>
 
           {/* right diagonal */}
-          <section className="relative w-full -mt-32 bg-gradient-to-l from-[#3D4647] to-[#212C2D] py-12 transform -skew-y-6">
-            <div className="container mx-auto px-4 transform skew-y-3">
-              <div className="text-center text-white h-20">
+          <section className="relative w-full -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-40 bg-gradient-to-l from-[#3D4647] to-[#212C2D] py-8 sm:py-0 md:py-12 transform -skew-y-6 sm:-skew-y-6 md:-skew-y-6">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 transform skew-y-2 sm:skew-y-3">
+              <div className="text-center text-white h-12 sm:h-16 md:h-20">
+              
+              </div>
+            </div>
+          </section>
+
+
+
+
+          {/* right diagonal */}
+          <section className="relative w-full -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-40 bg-gradient-to-l from-[#3D4647] to-[#212C2D] py-8 sm:py-0 md:py-12 transform -skew-y-6 sm:-skew-y-6 md:-skew-y-6">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 transform skew-y-2 sm:skew-y-3">
+              <div className="text-center text-white h-12 sm:h-16 md:h-20">
               
               </div>
             </div>
           </section>
 
           {/* left diagonal */}
-          <section className="relative w-full bg-gradient-to- from[#212C2D] to[#3D4647] bg-[#3D4647] py-12 transform skew-y-6">
-            <div className="container mx-auto px-4 transform">
-              <div className="text-center text-white h-20 overflow-hidden relative">
+          <section className="relative w-full bg-gradient-to-r from-[#212C2D] to-[#3D4647] bg-[#3D4647] py-8 sm:py-10 md:py-12 transform skew-y-6 sm:skew-y-6 md:skew-y-6">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 transform">
+              <div className="text-center text-white h-12 sm:h-16 md:h-20 overflow-hidden relative">
                 <div className="animate-marquee3 whitespace-nowrap absolute">
-                  <span className="text-[#4F5758] text-8xl font-['BigNoodleTitling']">IGNITING YOUR LIFE WITH THE POWER OF NATURE</span>
+                  <span className="text-[#4F5758] text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-['BigNoodleTitling']">IGNITING YOUR LIFE WITH THE POWER OF NATURE</span>
                 </div>
               </div>
             </div>
           </section>
 
-
           {/* Orange Diagonal Section */}
-          <section className="relative w-full bg-[#e15822] transform -skew-y-6">
-            <div className="container mx-auto px-4 py-12 transform skew-y-6">
+          <section className="relative w-full bg-[#e15822] transform -skew-y-3 sm:-skew-y-4 md:-skew-y-6">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 transform skew-y-3 sm:skew-y-4 md:skew-y-6">
               <div className="text-center text-white">
-                <h2 className="text-2xl font-sans sm:text-3xl md:text-4xl mb-4">
+                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-3 sm:mb-4 font-sans leading-tight">
                   <span className="italic">Number 1 </span>
-                  Supplier Of Charcoal<br />Briquettes And Shisha In
+                  Supplier Of Charcoal<br className="hidden sm:block" />
+                  <span className="sm:hidden"> </span>Briquettes And Shisha In
                 </h2>
-                <div className="inline-block bg-white rounded-full px-4 py-2 mt-2">
-                  <div className="flex items-center">
-                    <img src="/SierraLeone.svg" alt="Sierra Leone Flag" className="w-6 h-6 mr-2"
-                    />
-                    <span className="font-['BigNoodleTitling'] text-[#212c2d] text-xl">SIERRA LEONE</span>
+                <div className="inline-block bg-white rounded-full px-3 sm:px-4 py-1.5 sm:py-2 mt-2">
+                  <div className="flex items-center justify-center">
+                    <img src="/SierraLeone.svg" alt="Sierra Leone Flag" className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-1.5 sm:mr-2" />
+                    <span className="font-['BigNoodleTitling'] text-[#212c2d] text-sm sm:text-base md:text-lg lg:text-xl">SIERRA LEONE</span>
                   </div>
                 </div>
               </div>

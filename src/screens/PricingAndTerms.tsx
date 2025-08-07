@@ -72,9 +72,9 @@ export const PricingAndTerms = (): JSX.Element => {
           </div>
           
           <div className="container mx-auto px-4">
-            <Card className="w-full max-w-[1465px] mx-auto -mt-32 bg-[#e15822] rounded-[20px] shadow-lg border-0 h-[700px] relative z-20">
+            <Card className="w-full max-w-[1465px] mx-auto -mt-32 bg-[#e15822] rounded-[20px] shadow-lg border-0 h-auto min-h-[500px] sm:min-h-[600px] md:h-[700px] relative z-20">
               
-              <CardContent className="p-8 md:p-12 relative">
+              <CardContent className="p-4 sm:p-6 md:p-8 lg:p-12 relative">
                 <div className="flex flex-col md:flex-row">
                   <div className="md:w-2/3 pr-0 md:pr-12">
                     
@@ -85,28 +85,28 @@ export const PricingAndTerms = (): JSX.Element => {
                       onValueChange={setActiveTab}
                       className="w-full"
                     >
-                      <TabsList className="flex bg-transparent p-0 h-[58px] mb-8">
+                      <TabsList className="flex bg-transparent p-0 h-[48px] sm:h-[58px] mb-6 sm:mb-8">
                         <TabsTrigger
                           value="specifications"
-                          className="relative w-[152px] h-[58px] rounded-[71.5px] data-[state=active]:bg-transparent data-[state=active]:text-[#ffe7b6] data-[state=active]:border-2 data-[state=active]:border-[#ffe7b6] data-[state=inactive]:text-white"
+                          className="relative w-[120px] sm:w-[152px] h-[48px] sm:h-[58px] rounded-[71.5px] data-[state=active]:bg-transparent data-[state=active]:text-[#ffe7b6] data-[state=active]:border-2 data-[state=active]:border-[#ffe7b6] data-[state=inactive]:text-white"
                         >
-                          <span className="font-sans font-semibold text-sm text-center">
+                          <span className="font-sans font-semibold text-xs sm:text-sm text-center">
                             SPECIFICATIONS
                           </span>
                         </TabsTrigger>
                         <TabsTrigger
                           value="pricing"
-                          className="relative w-[152px] h-[58px] rounded-[71.5px] data-[state=active]:bg-transparent data-[state=active]:text-[#ffe7b6] data-[state=active]:border-2 data-[state=active]:border-[#ffe7b6] data-[state=inactive]:text-white"
+                          className="relative w-[120px] sm:w-[152px] h-[48px] sm:h-[58px] rounded-[71.5px] data-[state=active]:bg-transparent data-[state=active]:text-[#ffe7b6] data-[state=active]:border-2 data-[state=active]:border-[#ffe7b6] data-[state=inactive]:text-white"
                         >
-                          <span className="font-sans font-semibold text-sm text-center">
+                          <span className="font-sans font-semibold text-xs sm:text-sm text-center">
                             PRICING
                           </span>
                         </TabsTrigger>
                         <TabsTrigger
                           value="terms"
-                          className="relative w-[152px] h-[58px] rounded-[71.5px] data-[state=active]:bg-transparent data-[state=active]:text-[#ffe7b6] data-[state=active]:border-2 data-[state=active]:border-[#ffe7b6] data-[state=inactive]:text-white"
+                          className="relative w-[120px] sm:w-[152px] h-[48px] sm:h-[58px] rounded-[71.5px] data-[state=active]:bg-transparent data-[state=active]:text-[#ffe7b6] data-[state=active]:border-2 data-[state=active]:border-[#ffe7b6] data-[state=inactive]:text-white"
                         >
-                          <span className="font-sans font-semibold text-sm text-center">
+                          <span className="font-sans font-semibold text-xs sm:text-sm text-center">
                             TERMS
                           </span>
                         </TabsTrigger>
@@ -116,11 +116,11 @@ export const PricingAndTerms = (): JSX.Element => {
                       {/* specifications option */}
                       <TabsContent value="specifications" className="mt-0">
                         <div className="text-white">
-                          <h2 className="font-bold text-3xl md:text-4xl mb-6">
-                            Coconut Shell Charcoal Briquette <br /> Specifications for Shisha/Hookah:
+                          <h2 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
+                            Coconut Shell Charcoal Briquette <br className="hidden sm:block" /> Specifications for Shisha/Hookah:
                           </h2>
                           
-                          <ul className="font-normal text-base">
+                          <ul className="font-normal text-sm sm:text-base space-y-1">
                             {specifications.map((spec, index) => (
                               <li key={index}>{spec}</li>
                             ))}
@@ -131,38 +131,38 @@ export const PricingAndTerms = (): JSX.Element => {
                       
                       {/* Pricing Options */}
                       <TabsContent value="pricing" className="mt-0">
-                        <div className="rounded-[20px] p-8 text-white">
-                          <h2 className="font-sans font-bold text-3xl mb-6">
-                            The Price Of Coconut Shell Charcoal <br /> Depends On Its Specifications And <br /> Packaging.
+                        <div className="rounded-[20px] p-4 sm:p-6 md:p-8 text-white">
+                          <h2 className="font-sans font-bold text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6">
+                            The Price Of Coconut Shell Charcoal <br className="hidden sm:block" /> Depends On Its Specifications And <br className="hidden sm:block" /> Packaging.
                           </h2>
                           
-                          <div className="space-y-6">
+                          <div className="space-y-4 sm:space-y-6">
                             {pricingOptions.map((option, index) => (
                               <div key={index}>
-                                <h3 className="font-semibold text-xl">
+                                <h3 className="font-semibold text-lg sm:text-xl">
                                   {option.name}:
                                 </h3>
                                 <div className="">
                                   {option.name === "Bulk packaging" && (
                                     <>
-                                      <p className="font-sans mb-2">Bulk packaging</p>
-                                      <p className="font-sans text-white/90">
+                                      <p className="font-sans mb-2 text-sm sm:text-base">Bulk packaging</p>
+                                      <p className="font-sans text-white/90 text-sm sm:text-base">
                                         {option.description}
                                       </p>
                                     </>
                                   )}
                                   {option.name === "Price range" && (
-                                    <p className="font-sans text-white/90">
+                                    <p className="font-sans text-white/90 text-sm sm:text-base">
                                       {option.description}
                                     </p>
                                   )}
                                   {option.name === "Starting price for 2025" && (
                                     <>
-                                      <p className="font-sans">
+                                      <p className="font-sans text-sm sm:text-base">
                                         {option.price} {option.description}
                                       </p>
                                       {option.note && (
-                                        <p className="font-sans text-sm text-white/80 italic">
+                                        <p className="font-sans text-xs sm:text-sm text-white/80 italic">
                                           {option.note}
                                         </p>
                                       )}
@@ -173,8 +173,8 @@ export const PricingAndTerms = (): JSX.Element => {
                             ))}
 
                             {/* Note */}
-                            <div className="mt-8 pt-6">
-                              <p className="font-sans text-white/90">
+                            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6">
+                              <p className="font-sans text-white/90 text-sm sm:text-base">
                                 Note: These prices are approximate. Final prices depend on specifications, order volume, and packaging.
                               </p>
                             </div>
@@ -186,23 +186,23 @@ export const PricingAndTerms = (): JSX.Element => {
                       {/* Terms & Conditions */}
                       <TabsContent value="terms" className="mt-0">
                         <div className="text-white">
-                          <div className="space-y-6">
+                          <div className="space-y-4 sm:space-y-6">
                             {termsCategories.map((category, index) => (
                               <div key={index} className="">
-                                <h3 className="font-sans font-semibold text-2xl">
+                                <h3 className="font-sans font-semibold text-lg sm:text-xl md:text-2xl">
                                   {category.title}
                                 </h3>
-                                <p className="font-sans text-white/90 whitespace-pre-line">
+                                <p className="font-sans text-white/90 whitespace-pre-line text-sm sm:text-base">
                                   {category.content}
                                 </p>
                               </div>
                             ))}
                           </div>
                           
-                          <div className="mt-8">
-                            <p className="font-sans text-white/80">
+                          <div className="mt-6 sm:mt-8">
+                            <p className="font-sans text-white/80 text-sm sm:text-base">
                               Once the shipment is dispatched, we will provide all necessary shipping documents, 
-                              including the Bill of Lading, Commercial Invoice, and Packing List. <br />
+                              including the Bill of Lading, Commercial Invoice, and Packing List. <br className="hidden sm:block" />
                               We encourage our future clients to schedule a visit our factory.
                             </p>
                           </div>
@@ -211,12 +211,12 @@ export const PricingAndTerms = (): JSX.Element => {
                     </Tabs>
                   </div>
                   
-                  <div className="md:w-1/3 mt-12 md:mt-0 relative z-[100] overflow-hidden">
+                  <div className="md:w-1/3 mt-8 sm:mt-12 md:mt-0 relative z-[100] overflow-hidden">
                     <div className="relative">
-                      <div className="absolute w-[300px] h-[300px] md:w-[496px] md:h-[496px] top-0 left-0 md:left-[68px] rounded-[247.9px] blur-[64.5px] z-40" />
+                      <div className="absolute w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[496px] md:h-[496px] top-0 left-0 md:left-[68px] rounded-[247.9px] blur-[64.5px] z-40" />
 
                       <img
-                        className="relative z-[9999] w-full max-w-[350px] md:max-w-[450px] mx-auto -mt-60"
+                        className="relative z-[9999] w-full max-w-[280px] sm:max-w-[350px] md:max-w-[450px] mx-auto -mt-40 sm:-mt-48 md:-mt-60"
                         alt="Wi yone sample"
                         src="/WiYoneSample.svg"
                       />
