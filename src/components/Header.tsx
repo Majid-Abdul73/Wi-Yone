@@ -35,21 +35,13 @@ export const Header: React.FC<HeaderProps> = ({ title }) => {
         </div>
       )}
 
-      <Button
-        variant="outline"
-        className="relative w-[60px] sm:w-[80px] md:w-[100px] lg:w-[120px] xl:w-[128px] h-[32px] sm:h-[36px] md:h-[40px] lg:h-[44px] xl:h-[48px] bg-white rounded-[71.5px] border-[2px] sm:border-[3px] border-solid border-[#ffe7b6] flex items-center justify-between px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 hover:bg-white hover:text-[#212c2d] transition-all duration-200"
-        onClick={toggleMenu}
-      >
-        <img
-          className="w-[20px] sm:w-[28px] md:w-[32px] lg:w-[38px] xl:w-[46px] h-[5px] sm:h-[7px] md:h-[8px] lg:h-[10px] xl:h-[11px]"
-          alt="Menu icon" 
-          src="/menu.svg"
-        />
-        <span className="font-sans font-semibold text-[#212c2d] text-[10px] sm:text-xs md:text-sm lg:text-sm xl:text-sm">
-          MENU
-        </span>
-      </Button>
 
+      <button className="flex items-center bg-white rounded-full p-1 sm:p-2 md:p-1 lg:p-1 border-solid border-[#ffe7b6] border-2 gap-1 sm:gap-2 md:gap-2 lg:gap-3 w-auto min-w-[60px] sm:min-w-[70px] md:min-w-[80px] lg:min-w-[90px] hover:bg-gray-50 transition-colors duration-200"         
+        onClick={toggleMenu}>
+        <img className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" alt="Menu icon" src="/menu.svg" />
+        <span className="font-sans font-bold text-xs sm:text-sm md:text-base lg:text-lg text-[#212c2d]">Menu</span>
+      </button>
+      
       {menuOpen && <Menu isOpen={menuOpen} onClose={toggleMenu} />}
     </header>
   );
