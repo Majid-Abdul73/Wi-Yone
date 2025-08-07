@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "./ui/button";
 import Menu from "./Menu";
 
 interface HeaderProps {
@@ -19,7 +18,7 @@ export const Header: React.FC<HeaderProps> = ({ title }) => {
       <Link to="/">
         <div className="flex items-center">
           <img
-            className="h-[40px] sm:h-[50px] md:h-[60px] lg:h-[65px] xl:h-[70px] w-auto"
+            className="h-[50px] sm:h-[50px] md:h-[70px] lg:h-[70px] xl:h-[100px] w-auto"
             alt="Logo"
             src="/logo.svg"
           />
@@ -36,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ title }) => {
       )}
 
 
-      <button className="flex items-center bg-white rounded-full p-1 sm:p-2 md:p-1 lg:p-1 border-solid border-[#ffe7b6] border-2 gap-1 sm:gap-2 md:gap-2 lg:gap-3 w-auto min-w-[60px] sm:min-w-[70px] md:min-w-[80px] lg:min-w-[90px] hover:bg-gray-50 transition-colors duration-200"         
+      <button className="flex items-center bg-white rounded-full p-2 px-6 sm:p-2 md:p-2 lg:p-2 border-solid border-[#ffe7b6] border-2 gap-1 sm:gap-2 md:gap-2 lg:gap-3 w-auto min-w-[60px] sm:min-w-[70px] md:min-w-[80px] lg:min-w-[90px] hover:bg-gray-50 transition-colors duration-200"         
         onClick={toggleMenu}>
         <img className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" alt="Menu icon" src="/menu.svg" />
         <span className="font-sans font-bold text-xs sm:text-sm md:text-base lg:text-lg text-[#212c2d]">Menu</span>

@@ -67,7 +67,7 @@ export const PricingAndTerms = (): JSX.Element => {
         <div className="absolute w-full h-full top-0 left-0 bg-[url(https://c.animaapp.com/mdxj06n94eLqh6/img/star-bg.svg)] bg-[100%_100%] -z-10" />
         
         <div className="relative z-10">
-          <div className="w-full h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-no-repeat">
+          <div className="w-full h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-norepeat bg-cover overflow-hidden">
             <Header title="PRICING AND TERMS" />
           </div>
           

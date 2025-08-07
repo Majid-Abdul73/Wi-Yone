@@ -112,7 +112,7 @@ export const Stores = (): JSX.Element => {
         <div className="absolute w-full h-full top-0 left-0 bg-[url('/star-bg1.svg')] bg-[100%_100%] -z-10" />
         
         <div className="relative z-10">
-          <div className="w-full h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-no-repeat overflow-hidden">
+          <div className="w-full h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-norepeat bg-cover overflow-hidden">
             <Header title="STORES" />
           </div>
           

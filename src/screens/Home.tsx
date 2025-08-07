@@ -79,10 +79,10 @@ export const Home: React.FC = () => {
           <section className="relative w-full min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] bg-contain bg-center bg-no-repeat" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}>
             <div className="absolute inset-0 bg-opacity-30"></div>
             <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
-              {/* Changed to always be flex-row instead of flex-col on small screens */}
+
               <div className="flex flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-12">
                 {/* Left side - Text content */}
-                <div className="-mt-16 sm:-mt-28 md:-mt-32 lg:-mt-44 flex-shrink-0">
+                <div className="-mt-16 sm:-mt-28 md:-mt-32 ml-10 lg:-mt-44 flex-shrink-0">
                   <img 
                     src="/fireforlonger.svg"
                     alt="Fire For Longer" 
@@ -91,11 +91,11 @@ export const Home: React.FC = () => {
                 </div>
 
                 {/* Right side - Product image */}
-                <div className="flex justify-center -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-24">
+                <div className="flex justify-center -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-36">
                   <img 
                     src="/WiYoneSample.svg" 
                     alt="Wi Yone Charcoal Package" 
-                    className="max-w-full w-[180px] sm:w-[280px] md:w-[400px] lg:w-[600px] xl:max-w-2xl h-auto"
+                    className="max-w-full w-[180px] sm:w-[280px] md:w-[400px] lg:w-[700px] xl:max-w-2xl h-auto"
                   />
                 </div>
               </div>
@@ -126,7 +126,7 @@ export const Home: React.FC = () => {
           {/* left diagonal */}
           <section className="relative w-full bg-gradient-to-r from-[#212C2D] to-[#3D4647] bg-[#3D4647] py-8 sm:py-10 md:py-12 transform skew-y-6 sm:skew-y-6 md:skew-y-6">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 transform">
-              <div className="text-center text-white h-12 sm:h-16 md:h-20 overflow-hidden relative">
+              <div className="text-center text-white h-12 sm:h-16 md:h-28 overflow-hidden relative">
                 <div className="animate-marquee3 whitespace-nowrap absolute">
                   <span className="text-[#4F5758] text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-['BigNoodleTitling']">IGNITING YOUR LIFE WITH THE POWER OF NATURE</span>
                 </div>
@@ -160,7 +160,7 @@ export const Home: React.FC = () => {
 
 
              {/* Coconut Waste Section  */}
-          <section className="relative w-full bg-[#212c2d] py-12 transform -skew-y-6">
+          <section className="relative w-full bg-[#212c2d] py-16 transform -skew-y-6">
             <div className="container mx-auto px-4 transform skew-y-6">
               <div className="container mx-auto px-4 text-center">
               <img 
@@ -209,25 +209,25 @@ export const Home: React.FC = () => {
       <div className="relative overflow-hidde -mt-5 sm:-mt-8 md:mt-0 z-0">
         <div className="w-full transform" style={{ transform: 'skewY(-6deg)' }}>
 
-          <div className="w-full h-16 sm:h-20 md:h-28 bg-[#4F5758] flex items-center overflow-hidden relative">
+          <div className="w-full h-16 sm:h-20 md:h-40 bg-[#4F5758] flex items-center overflow-hidden relative">
             <div className="animate-marquee3 whitespace-nowrap absolute">
-              <span className="text-[#E15822] text-2xl sm:text-4xl md:text-7xl font-['BigNoodleTitling'] mx-4 inline-block">FULL-FLAVORED GRILLING EXPERIENCE</span>
+              <span className="text-[#E15822] text-2xl sm:text-4xl md:text-8xl font-['BigNoodleTitling'] mx-4 inline-block">FULL-FLAVORED GRILLING EXPERIENCE</span>
             </div>
           </div>
           
-          <div className="w-full h-16 sm:h-20 md:h-28 bg-[#3D4647] flex items-center overflow-hidden relative">
+          <div className="w-full h-16 sm:h-20 md:h-40 bg-[#3D4647] flex items-center overflow-hidden relative">
             <div className="animate-marquee2 whitespace-nowrap absolute">
               <span className="text-[#C9C9C9] text-2xl sm:text-4xl md:text-8xl font-['BigNoodleTitling'] mx-4 inline-block">SUSTAINABLE AND ECO-FRIENDLY</span>
             </div>
           </div>
           
-          <div className="w-full h-16 sm:h-20 md:h-28 bg-[#4F5758] flex items-center overflow-hidden relative">
+          <div className="w-full h-16 sm:h-20 md:h-40 bg-[#4F5758] flex items-center overflow-hidden relative">
             <div className="animate-marquee3 whitespace-nowrap absolute">
               <span className="text-[#61A6D9] text-2xl sm:text-4xl md:text-8xl font-['BigNoodleTitling'] mx-4 inline-block">LONGER AND HOTTER BURN</span>
             </div>
           </div>
           
-          <div className="w-full h-16 sm:h-20 md:h-28 bg-[#3D4647] flex items-center overflow-hidden relative">
+          <div className="w-full h-16 sm:h-20 md:h-40 bg-[#3D4647] flex items-center overflow-hidden relative">
             <div className="animate-marquee2 whitespace-nowrap absolute">
               <span className="text-[#727272] text-2xl sm:text-4xl md:text-8xl font-['BigNoodleTitling'] mx-4 inline-block">LOW ASH PRODUCTION</span>
             </div>
