@@ -27,17 +27,17 @@ export const Product = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("about");
 
   return (
-    <div className="bg-[#fff8ea] min-h-screen">
+    <div className="bg-[#FFF8EA] bg[#fff8ea] min-h-screen">
       <div className="relative">
         <div className="absolute w-full h-full top-0 left-0 bg-[url('/star-bg1.svg')] bg-[100%_100%] -z-10" />
         
         <div className="relative z-10">
-          <div className="w-full h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-norepeat bg-cover overflow-hidden">
+          <div className="w-full h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-no-repeat">
             <Header title="PRODUCT" />
           </div>
           
           <div className="container mx-auto px-4">
-            <Card className="w-full max-w-[1465px] mx-auto -mt-32 bg-[#3D4647] rounded-[20px] shadow-lg border-0 h-auto min-h-[400px] sm:min-h-[450px] md:h-[500px] relative z-20">
+            <Card className="w-full max-w-[1465px] mx-auto -mt-32 bg-[#3D4647] rounded-[20px] shadow-lg border-0 h-auto min-h-[500px] sm:min-h-[500px] md:min-h-[500px] lg:min-h-[500px] xl:min-h-[500px] relative z-20">
               
               <CardContent className="p-4 sm:p-6 md:p-8 lg:p-12 relative">
                 <div className="flex flex-col md:flex-row">
@@ -50,7 +50,7 @@ export const Product = (): JSX.Element => {
                       onValueChange={setActiveTab}
                       className="w-full"
                     >
-                      <TabsList className="flex bg-transparent p-0 h-[48px] sm:h-[58px] mb-6 sm:mb-8">
+                      <TabsList className="flex justify-start bg-transparent p-0 h-[48px] sm:h-[58px] mb-6 sm:mb-8">
                         <TabsTrigger
                           value="about"
                           className="relative w-[120px] sm:w-[152px] h-[48px] sm:h-[58px] rounded-[71.5px] data-[state=active]:bg-transparent data-[state=active]:text-[#ffe7b6] data-[state=active]:border-2 data-[state=active]:border-[#ffe7b6] data-[state=inactive]:text-white"
@@ -129,7 +129,7 @@ export const Product = (): JSX.Element => {
                       <div className="absolute w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[496px] md:h-[496px] top-0 left-0 md:left-[68px] rounded-[247.9px] blur-[64.5px] z-40" />
 
                       <img
-                        className="relative z-[9999] w-full max-w-[280px] sm:max-w-[350px] md:max-w-[450px] mx-auto -mt-40 sm:-mt-48 md:-mt-60"
+                        className="relative z-[9999] w-full max-w-[280px] sm:max-w-[350px] md:max-w-[450px] mx-auto -mt20 sm:-mt24 md:-mt44 lg:-mt52 xl:mt72"
                         alt="Wi yone sample"
                         src="/WiYoneSample.svg"
                       />

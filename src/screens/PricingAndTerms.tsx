@@ -20,42 +20,44 @@ export const PricingAndTerms = (): JSX.Element => {
   // Pricing data
   const pricingOptions = [
     {
-      name: "Bulk packaging",
-      description: "Inner box packaging (typically $100 USD per ton more expensive than bulk packaging)"
+      name: "Packaging",
+      description: "Lamination with BOPP (Biaxially Oriented Polypropylene) film adds a protective layer that improves the material's resistance to tearing, moisture, and other environmental factors.\n\n  PP woven bag is a type of packaging bag made from polypropylene (PP) that is woven together to create a strong and durable material. These bags are known for their strength, tear resistance, and ability to handle heavy loads, making them suitable for various industrial and agricultural applications. They are also lightweight and designed to be waterproof."
     },
     {
-      name: "Price range",
-      description: "Packaging specifications may increase the price by up to $200 USD per ton."
+      name: "Bag Specifications",
+      description: "2kg & 5kg bags: Bopp Laminated PP Woven, Top Open with Punched Handle, Stitch Bottom | 10kg bags: Bopp Laminated PP Woven, Full Open Top, Stitch Bottom | 15kg & 25kg bags: Coming Soon"
     },
     {
-      name: "Starting price for 2025",
-      price: "$1,400 USD per ton",
-      description: "(EXW basis) for 100% natural coconut charcoal briquettes for shisha. Minimum order: 18 tons or one 20-foot container.",
-      note: "FOB pricing is based on the ports of Semarang or Surabaya, Indonesia."
+      name: "Premium Shisha Charcoal",
+      price: "$1,200-1,500 USD per ton",
+      description: "(FOB basis) for 100% Premium Shisha Pure Coconut or Bamboo Charcoal Briquette.",
+      note: "Usage: Shisha/Hookah"
+    },
+    {
+      name: "BBQ Charcoal",
+      price: "$800-1,000 USD per ton",
+      description: "(FOB basis) for BBQ Charcoal Briquette.",
+      note: "Usage: BBQ/Grilling/Cooking/Industrial"
     }
   ];
 
   // Terms data
   const termsCategories = [
     {
-      title: "Minimum Order Quantity (MOQ) or Export",
-      content: "Shisha/Hookah Charcoal: 19 tons (1 x 20-foot container, Full Container Load - FCL).\n\nBarbecue Charcoal: 17-19 tons (1 x 20ft container, Full Container Load - FCL)"
+      title: "Minimum Order Quantity (MOQ) for Export",
+      content: "Shisha/Hookah Charcoal: 17-19 tons (1 x 20ft container, Full Container Load - FCL)\n\nBarbecue Charcoal: 17-19 tons (1 x 20ft container, Full Container Load - FCL)"
     },
     {
       title: "Payment Terms",
-      content: "Payments are accepted exclusively via Telegraphic Transfer (Wire Transfer).A 50% advance payment is required upon signing the sales contract or submitting  the purchase order. The remaining 50% balance must be settled at least five days prior to the container loading schedule. "
+      content: "Payments are accepted exclusively via Telegraphic Transfer (Wire Transfer).\nA 50% advance payment is required upon signing the sales contract or submitting the purchase order.\nThe remaining 50% balance must be settled at least five days prior to the container loading schedule."
     },
     {
       title: "Additional Notes",
-      content: "Prices are quoted based on FOB (Free on Board) The quoted price includes export documentation, such as the Commercial Invoice, Packing List, and Bill of Lading. "
-    },
-    {
-      title: "Production Lead Time",
-      content: "The lead time for production varies based on order volume and packaging: Charcoal production time: 10-15 days for a 20ft container 15-20 days for a 40ft container Packing: 3-6 days "
+      content: "Prices are quoted based on FOB (Free on Board)\nThe quoted price includes export documentation, such as the Commercial Invoice, Packing List, and Bill of Lading."
     },
     {
       title: "Productions Lead Time",
-      content: "The lead time for production varies based on order volume and packaging: Charcoal production time: 10-15 days for a 20ft container 15-20 days for a 40ft container Packing: 3-6 days "
+      content: "The lead time for production varies based on order volume and packaging:\nCharcoal production time:\n10-15 days for a 20ft container\n15-20 days for a 40ft container\nPacking: 3-6 days\n\nOnce the shipment is dispatched, we will provide all necessary shipping documents, including the Bill of Lading, Commercial Invoice, and Packing List.\n\nWe encourage our future clients to schedule a visit our factory."
     },
   ];
 
@@ -67,12 +69,12 @@ export const PricingAndTerms = (): JSX.Element => {
         <div className="absolute w-full h-full top-0 left-0 bg-[url(https://c.animaapp.com/mdxj06n94eLqh6/img/star-bg.svg)] bg-[100%_100%] -z-10" />
         
         <div className="relative z-10">
-          <div className="w-full h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-norepeat bg-cover overflow-hidden">
+          <div className="w-full h-[500px] lg:h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-no-repeat">
             <Header title="PRICING AND TERMS" />
           </div>
           
           <div className="container mx-auto px-4">
-            <Card className="w-full max-w-[1465px] mx-auto -mt-32 bg-[#e15822] rounded-[20px] shadow-lg border-0 h-auto min-h-[500px] sm:min-h-[600px] md:h-[700px] relative z-20">
+            <Card className="w-full max-w-[1465px] mx-auto -mt-32 bg-[#e15822] rounded-[20px] shadow-lg border-0 h-auto min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-[900px] xl:min-h-[1000px] relative z-20">
               
               <CardContent className="p-4 sm:p-6 md:p-8 lg:p-12 relative">
                 <div className="flex flex-col md:flex-row">
@@ -85,7 +87,7 @@ export const PricingAndTerms = (): JSX.Element => {
                       onValueChange={setActiveTab}
                       className="w-full"
                     >
-                      <TabsList className="flex bg-transparent p-0 h-[48px] sm:h-[58px] mb-6 sm:mb-8">
+                      <TabsList className="flex justify-start bg-transparent p-0 h-[48px] sm:h-[58px] mb-6 sm:mb-8">
                         <TabsTrigger
                           value="specifications"
                           className="relative w-[120px] sm:w-[152px] h-[48px] sm:h-[58px] rounded-[71.5px] data-[state=active]:bg-transparent data-[state=active]:text-[#ffe7b6] data-[state=active]:border-2 data-[state=active]:border-[#ffe7b6] data-[state=inactive]:text-white"
@@ -131,9 +133,9 @@ export const PricingAndTerms = (): JSX.Element => {
                       
                       {/* Pricing Options */}
                       <TabsContent value="pricing" className="mt-0">
-                        <div className="rounded-[20px] p-4 sm:p-6 md:p-8 text-white">
-                          <h2 className="font-sans font-bold text-xl sm:text-2xl md:text-3xl mb-4 sm:mb-6">
-                            The Price Of Coconut Shell Charcoal <br className="hidden sm:block" /> Depends On Its Specifications And <br className="hidden sm:block" /> Packaging.
+                        <div className="text-white">
+                          <h2 className="font-sans font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
+                            The Price Of Charcoal Depends On <br className="hidden sm:block" /> Specification And Packaging.
                           </h2>
                           
                           <div className="space-y-4 sm:space-y-6">
@@ -143,20 +145,19 @@ export const PricingAndTerms = (): JSX.Element => {
                                   {option.name}:
                                 </h3>
                                 <div className="">
-                                  {option.name === "Bulk packaging" && (
-                                    <>
-                                      <p className="font-sans mb-2 text-sm sm:text-base">Bulk packaging</p>
-                                      <p className="font-sans text-white/90 text-sm sm:text-base">
-                                        {option.description}
-                                      </p>
-                                    </>
-                                  )}
-                                  {option.name === "Price range" && (
+                                  {option.name === "Packaging" && (
                                     <p className="font-sans text-white/90 text-sm sm:text-base">
                                       {option.description}
                                     </p>
                                   )}
-                                  {option.name === "Starting price for 2025" && (
+                                  {option.name === "Bag Specifications" && (
+                                    <div className="font-sans text-white/90 text-sm sm:text-base">
+                                      {option.description.split(' | ').map((spec, i) => (
+                                        <p key={i} className="mb-1">{spec}</p>
+                                      ))}
+                                    </div>
+                                  )}
+                                  {(option.name === "Premium Shisha Charcoal" || option.name === "BBQ Charcoal") && (
                                     <>
                                       <p className="font-sans text-sm sm:text-base">
                                         {option.price} {option.description}
@@ -216,7 +217,7 @@ export const PricingAndTerms = (): JSX.Element => {
                       <div className="absolute w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[496px] md:h-[496px] top-0 left-0 md:left-[68px] rounded-[247.9px] blur-[64.5px] z-40" />
 
                       <img
-                        className="relative z-[9999] w-full max-w-[280px] sm:max-w-[350px] md:max-w-[450px] mx-auto -mt-40 sm:-mt-48 md:-mt-60"
+                        className="relative z-[9999] w-full max-w-[280px] sm:max-w-[350px] md:max-w-[450px] mx-auto -mt20 sm:-mt24 md:-mt44 lg:-mt52 xl:-mt72"
                         alt="Wi yone sample"
                         src="/WiYoneSample.svg"
                       />

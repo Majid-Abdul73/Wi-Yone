@@ -2,12 +2,13 @@ import React from "react";
 import { Card, CardContent } from "./ui/card";
 
 export interface StoreInfo {
-  id: number;
+  id: string;
   name: string;
   city: string;
   country: string;
   phoneNumber: string;
   emailAddress: string;
+  location: string; // Add this field
 }
 
 interface StoreCardProps {

@@ -53,12 +53,13 @@ export const Stores = (): JSX.Element => {
 
   // Convert Firebase Store to StoreInfo format for compatibility (memoized)
   const convertToStoreInfo = useCallback((store: Store): StoreInfo => ({
-    id: parseInt(store.id) || Math.random(),
+    id: (parseInt(store.id) || Math.random()).toString(),
     name: store.name,
     city: store.city,
     country: store.country,
     phoneNumber: store.phoneNumber,
-    emailAddress: store.emailAddress
+    emailAddress: store.emailAddress,
+    location: store.location || '' // Add this field
   }), []);
 
   // Memoize converted stores to avoid unnecessary re-renders
@@ -108,11 +109,9 @@ export const Stores = (): JSX.Element => {
 
   return (
     <div className="bg-[#fff8ea] min-h-screen">
-      <div className="relative">
-        <div className="absolute w-full h-full top-0 left-0 bg-[url('/star-bg1.svg')] bg-[100%_100%] -z-10" />
-        
+      <div className="relative">        
         <div className="relative z-10">
-          <div className="w-full h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-norepeat bg-cover overflow-hidden">
+          <div className="w-full h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-no-repeat bg-cover overflow-hidden">
             <Header title="STORES" />
           </div>
           

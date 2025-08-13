@@ -7,6 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '480px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        "2xl": '1536px'
+      },
+      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -50,13 +58,6 @@ module.exports = {
       fontFamily: {
         sans: [
           "General Sans",
-          // "ui-sans-serif",
-          // "system-ui",
-          // "sans-serif",
-          // '"Apple Color Emoji"',
-          // '"Segoe UI Emoji"',
-          // '"Segoe UI Symbol"',
-          // '"Noto Color Emoji"',
         ],
         noodle: ["BigNoodleTitling", "sans-serif"],
         mikoena: ["Mikoena-Regular", "serif"],
@@ -70,28 +71,36 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-      },
-   animation: {
-        marquee: 'marquee 5s linear infinite',  //  speed
-        marquee2: 'marquee2 5s linear infinite 3s',  //  3s delay for divs 2 and 4
-        marquee3: 'marquee3 10s linear infinite ',
-      },
-      keyframes: {
         marquee: {
-          '0%': { transform: 'translateX(-100%)' },  //direction (left to right)
-          '100%': { transform: 'translateX(200%)' }, 
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(200%)' },
         },
         marquee2: {
-          '0%': { transform: 'translateX(-100%)' },  // direction (left to right)
+          '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(200%)' },
         },
         marquee3: {
-          '0%': { transform: 'translateX(-100%)' },  // direction (left to right)
+          '0%': { transform: 'translateX(-100%)' },
           '100%': { transform: 'translateX(100%)' },
         },
       },
+      animation: {
+        marquee: 'marquee 5s linear infinite',
+        marquee2: 'marquee2 5s linear infinite 3s',
+        marquee3: 'marquee3 10s linear infinite',
+      },
     },
-    container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        sm: '480px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        "2xl": "1400px",
+      },
+    },
   },
   plugins: [],
   darkMode: ["class"],

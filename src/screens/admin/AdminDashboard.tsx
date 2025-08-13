@@ -14,6 +14,7 @@ export interface Store {
   country: string;
   phoneNumber: string;
   emailAddress: string;
+  location: string; // Add this field
   createdAt: Date;
   updatedAt: Date;
 }

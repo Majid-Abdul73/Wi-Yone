@@ -13,10 +13,12 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
     { to: '/', label: 'HOME' },
     { to: '/product', label: 'PRODUCT' },
     { to: '/pricing', label: 'PRICING & TERMS' },
-    { to: '/stores', label: 'STORES' }
+    { to: '/stores', label: 'STORES' },
+    {to: '/about', label: 'ABOUT US'}
   ];
 
-  const navLinkClasses = "block text-4xl md:text-7xl font-light text-black hover:opacity-70 transition-opacity uppercase tracking-tight";
+  const navLinkClasses = "block text-4xl sm:text-5xl md:text-7xl lg:text-6xl font-light text-black hover:opacity-70 transition-opacity uppercase tracking-tight";
+
    
   return (
     <div className="fixed inset-0 z-[10000] bg-[#FFF8EA] bg-cover bg-center bg-no-repeat" >  
@@ -39,7 +41,7 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
         
         {/* Navigation Items */}
         <div className="flex-1 flex flex-col justify-center md:px-16 lg:px-24">
-          <nav className="space-y-8">
+          <nav className="space-y-6">
             {navigationItems.map((item) => (
               <Link 
                 key={item.to}
@@ -55,7 +57,8 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
         </div>
         
         {/* Bottom Section */}
-        <div className="relative bottom-24 p-8 md:p-16 flex justify-end">
+        <div className="relative bottom-24 p-8 md:p-16 mt-20 md:-mt-24 lg:-mt-10 flex justify-end">
+
           <div className="flex flex-col items-end">
             <div className="mb-4">
               <img src="/Layer_1.svg" alt="Wi Yone Charcoal" className="h-24 w-auto" />

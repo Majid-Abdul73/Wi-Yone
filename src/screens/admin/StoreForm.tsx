@@ -15,7 +15,8 @@ export const StoreForm: React.FC<StoreFormProps> = ({ store, onSubmit, onCancel 
     city: '',
     country: '',
     phoneNumber: '',
-    emailAddress: ''
+    emailAddress: '',
+    location: '' // Add location field
   });
   
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -27,7 +28,8 @@ export const StoreForm: React.FC<StoreFormProps> = ({ store, onSubmit, onCancel 
         city: store.city,
         country: store.country,
         phoneNumber: store.phoneNumber,
-        emailAddress: store.emailAddress
+        emailAddress: store.emailAddress,
+        location: store.location || '' // Add location field
       });
     }
   }, [store]);
@@ -57,6 +59,12 @@ export const StoreForm: React.FC<StoreFormProps> = ({ store, onSubmit, onCancel 
       newErrors.emailAddress = 'Email address is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.emailAddress)) {
       newErrors.emailAddress = 'Please enter a valid email address';
+    }
+
+    if (!formData.location.trim()) {
+      newErrors.location = 'Map location URL is required';
+    } else if (!formData.location.includes('google.com/maps/embed')) {
+      newErrors.location = 'Please enter a valid Google Maps embed URL';
     }
 
     setErrors(newErrors);
@@ -171,6 +179,25 @@ export const StoreForm: React.FC<StoreFormProps> = ({ store, onSubmit, onCancel 
                 placeholder="Enter email address"
               />
               {errors.emailAddress && <p className="text-red-500 text-sm mt-1">{errors.emailAddress}</p>}
+            </div>
+
+            {/* Location */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Map Location (Google Maps Embed URL) *
+              </label>
+              <textarea
+                value={formData.location}
+                onChange={(e) => handleChange('location', e.target.value)}
+                className={`w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-[#212c2d] focus:border-transparent bg-white h-24 resize-none ${
+                  errors.location ? 'border-red-500' : 'border-gray-300'
+                }`}
+                placeholder="Paste Google Maps embed URL here (e.g., https://www.google.com/maps/embed?pb=...)"
+              />
+              {errors.location && <p className="text-red-500 text-sm mt-1">{errors.location}</p>}
+              <p className="text-xs text-gray-500 mt-1">
+                To get the embed URL: Go to Google Maps → Share → Embed a map → Copy HTML → Extract the src URL
+              </p>
             </div>
 
             {/* Form Actions */}
