@@ -7,37 +7,61 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs"
 export const PricingAndTerms = (): JSX.Element => {
   // Data for the specifications
   const specifications = [
-    "Ash Content: 1.8-2%",
-    "Burning Time: Over 2 hours",
-    "Ignition Time: Approximately 9 minutes",
-    "Drop Test: 0/10 (no breakage)",
-    "Ash Color: Natural white",
-    "Fixed Carbon: 80%",
-    "Moisture Content: 5%",
-    "Volatile Matter: 15%",
+    {
+      category: "Shisha/Hookah Charcoal",
+      details: [
+        "Types of Product: (100% PURE COCONUT or BAMBOO CHARCOAL BRIQUETTE)",
+        "Usage: Shisha | Hookah",
+        "Raw Material: 100% Coconut or 100% Bamboo",
+        "Grade: Premium | Shape: Cube",
+        "Duration of Burning: 1.5 - 2hrs",
+        "No Smell | No Smoke | No Chemical Additive | Strong | No Crack",
+        "Ash Color: White Grey | Ash Content: 2.5%-3% | Volatile Matter: Maximum 12% - 15%",
+        "Moisture: Maximum 6% | Fixed Carbon: Minimum 75% | Total Sulfur: Maximum 0.03%",
+        "Gross Calorific Value: 7200+ kcal/kg | Drop Test: Good (Strong)",
+        "Capacity: (20ft = 17 - 19 tons) & (40ft = 26 - 28 tons)",
+        "Production: 100+ tons per month"
+      ]
+    },
+    {
+      category: "BBQ/Grilling Charcoal",
+      details: [
+        "Types of Product: (100% PURE COCONUT or BAMBOO CHARCOAL BRIQUETTE)",
+        "Usage: BBQ | Grilling | Cooking | Industrial",
+        "Raw Material: 100% Coconut or 100% Bamboo",
+        "Grade: Premium | Shape: Pillow or Hexagon",
+        "Duration of Burning: 3 - 4hrs",
+        "No Smell | No Smoke | No Chemical Additive | No Crack | Strong",
+        "Ash Color: White Grey / Ash Content: 3% - 7% / Volatile Matter: Maximum 12% - 15%",
+        "Moisture: Maximum 6% | Fixed Carbon: Minimum 75% | Total Sulfur: Maximum 0.03%",
+        "Gross Calorific Value: 6500+ kcal/kg | Drop Test: Good (Strong)",
+        "Capacity: (20ft = 17 - 19 tons) & (40ft = 26 - 28 tons)",
+        "Production: 100+ tons per month"
+      ]
+    }
   ];
 
   // Pricing data
   const pricingOptions = [
     {
       name: "Packaging",
-      description: "Lamination with BOPP (Biaxially Oriented Polypropylene) film adds a protective layer that improves the material's resistance to tearing, moisture, and other environmental factors.\n\n  PP woven bag is a type of packaging bag made from polypropylene (PP) that is woven together to create a strong and durable material. These bags are known for their strength, tear resistance, and ability to handle heavy loads, making them suitable for various industrial and agricultural applications. They are also lightweight and designed to be waterproof."
-    },
-    {
-      name: "Bag Specifications",
-      description: "2kg & 5kg bags: Bopp Laminated PP Woven, Top Open with Punched Handle, Stitch Bottom | 10kg bags: Bopp Laminated PP Woven, Full Open Top, Stitch Bottom | 15kg & 25kg bags: Coming Soon"
+      description: "Lamination with BOPP (Biaxially Oriented Polypropylene) film adds a protective layer that improves the material's resistance to tearing, moisture, and other environmental factors.\n\nPP woven bag is a type of packaging bag made from polypropylene (PP) that is woven together to create a strong and durable material. These bags are known for their strength, tear resistance, and ability to handle heavy loads, making them suitable for various industrial and agricultural applications. They are also lightweight and designed to be waterproof."
     },
     {
       name: "Premium Shisha Charcoal",
-      price: "$1,200-1,500 USD per ton",
-      description: "(FOB basis) for 100% Premium Shisha Pure Coconut or Bamboo Charcoal Briquette.",
-      note: "Usage: Shisha/Hookah"
+      price: "$1200-1500 per ton (Free On Board)",
+      description: "Types of Product: (100% PURE COCONUT or BAMBOO CHARCOAL BRIQUETTE)",
+      note: "Usage: Shisha | Hookah"
     },
     {
       name: "BBQ Charcoal",
-      price: "$800-1,000 USD per ton",
-      description: "(FOB basis) for BBQ Charcoal Briquette.",
-      note: "Usage: BBQ/Grilling/Cooking/Industrial"
+      price: "USD $800 - $1000 per ton (Free On Board)",
+      description: "Types of Product: (100% PURE COCONUT or BAMBOO CHARCOAL BRIQUETTE)",
+      note: "Usage: BBQ | Grilling | Cooking | Industrial"
+    },
+    {
+      name: "Contact Information",
+      description: "Looking for an experienced and trusted BBQ/Grilling, Shisha, Industrial heating eco-friendly/sustainable/renewable charcoal for your private label brand.\n\nContact us to discuss further!\nWhatsApp: USA +19143360829 or +17209371705 | Sierra Leone +23274748876 or +23299200541\nEmail: care@wiyonecharcoal.com"
     }
   ];
 
@@ -66,7 +90,7 @@ export const PricingAndTerms = (): JSX.Element => {
   return (
     <div className="bg-[#fff8ea] min-h-screen">
       <div className="relative">
-        <div className="absolute w-full h-full top-0 left-0 bg-[url(https://c.animaapp.com/mdxj06n94eLqh6/img/star-bg.svg)] bg-[100%_100%] -z-10" />
+        <div className="absolute w-full h-full top-0 left-0 bg-[/star-bg.svg)] bg-[100%_100%] -z-10" />
         
         <div className="relative z-10">
           <div className="w-full h-[500px] lg:h-[500px] bg-[#212c2d] bg-[url('/coalsArtboard.svg')] bg-no-repeat">
@@ -118,15 +142,26 @@ export const PricingAndTerms = (): JSX.Element => {
                       {/* specifications option */}
                       <TabsContent value="specifications" className="mt-0">
                         <div className="text-white">
-                          <h2 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
-                            Coconut Shell Charcoal Briquette <br className="hidden sm:block" /> Specifications for Shisha/Hookah:
-                          </h2>
+                          {/* <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
+                            PRODUCT SPECIFICATION
+                          </h2> */}
                           
-                          <ul className="font-normal text-sm sm:text-base space-y-1">
+                          <div className="space-y-6 sm:space-y-8">
                             {specifications.map((spec, index) => (
-                              <li key={index}>{spec}</li>
+                              <div key={index} className="">
+                                <h3 className="font-semibold font-sans text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 text-[#ffe7b6]">
+                                  {spec.category}
+                                </h3>
+                                <ul className="font-normal text-sm sm:text-base space-y-1">
+                                  {spec.details.map((detail, detailIndex) => (
+                                    <li key={detailIndex} className="leading-relaxed">
+                                      {detail}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
                             ))}
-                          </ul>
+                          </div>
                         </div>
                       </TabsContent>
                       
@@ -135,50 +170,47 @@ export const PricingAndTerms = (): JSX.Element => {
                       <TabsContent value="pricing" className="mt-0">
                         <div className="text-white">
                           <h2 className="font-sans font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
-                            The Price Of Charcoal Depends On <br className="hidden sm:block" /> Specification And Packaging.
+                            Pricing
                           </h2>
+                          <p className="font-sans text-white/90 text-sm sm:text-base mb-6">
+                            The price of charcoal depends on specification and packaging.
+                          </p>
                           
                           <div className="space-y-4 sm:space-y-6">
                             {pricingOptions.map((option, index) => (
                               <div key={index}>
-                                <h3 className="font-semibold text-lg sm:text-xl">
+                                <h3 className="font-semibold font-sans text-lg sm:text-xl mb-2">
                                   {option.name}:
                                 </h3>
                                 <div className="">
                                   {option.name === "Packaging" && (
-                                    <p className="font-sans text-white/90 text-sm sm:text-base">
+                                    <p className="font-sans text-white/90 text-sm sm:text-base whitespace-pre-line">
                                       {option.description}
                                     </p>
                                   )}
-                                  {option.name === "Bag Specifications" && (
-                                    <div className="font-sans text-white/90 text-sm sm:text-base">
-                                      {option.description.split(' | ').map((spec, i) => (
-                                        <p key={i} className="mb-1">{spec}</p>
-                                      ))}
-                                    </div>
-                                  )}
                                   {(option.name === "Premium Shisha Charcoal" || option.name === "BBQ Charcoal") && (
                                     <>
-                                      <p className="font-sans text-sm sm:text-base">
-                                        {option.price} {option.description}
+                                      <p className="font-sans text-sm sm:text-base font-semibold">
+                                        Price: {option.price}
+                                      </p>
+                                      <p className="font-sans text-sm sm:text-base mt-1">
+                                        {option.description}
                                       </p>
                                       {option.note && (
-                                        <p className="font-sans text-xs sm:text-sm text-white/80 italic">
+                                        <p className="font-sans text-xs sm:text-sm text-white/80 italic mt-1">
                                           {option.note}
                                         </p>
                                       )}
                                     </>
                                   )}
+                                  {option.name === "Contact Information" && (
+                                    <p className="font-sans text-white/90 text-sm sm:text-base whitespace-pre-line">
+                                      {option.description}
+                                    </p>
+                                  )}
                                 </div>
                               </div>
                             ))}
-
-                            {/* Note */}
-                            <div className="mt-6 sm:mt-8 pt-4 sm:pt-6">
-                              <p className="font-sans text-white/90 text-sm sm:text-base">
-                                Note: These prices are approximate. Final prices depend on specifications, order volume, and packaging.
-                              </p>
-                            </div>
                           </div>
                         </div>
                       </TabsContent>

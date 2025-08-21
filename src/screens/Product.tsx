@@ -7,21 +7,21 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs"
 export const Product = (): JSX.Element => {
   // Data for the about section
   const aboutContent = {
-    title: "Made From Coconut Waste & Other Sources",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    title: "Renewable Resources Used",
+    description: "Based off customer request\n\n100% Organic Waste\n• Coconut Husk: disposed in landfill, contributes the environmental issues\n• Bamboo: leftover from construction materials; known for incredible fast growth rate; average growth rate of 1-4 inches per day\n• Palm Kernel Shells: byproduct of palm oil production\n• Rice Husk: byproduct of rice product\n• Saw Dust: byproduct of wood working process – Use Coming Soon\n\nQuality of Product\n• 100% Renewable Organic Waste\n\nThe production process starting from preparing the organic waste on stockpile, crushing by crusher machine, mixing with organic binder, compressed charcoal on shape, heating by oven machine 48-72 hours and packing into our 2kg, 5kg, and 10kg bags."
   };
 
   // Data for the uses section
   const usesContent = {
-    title: "Smokeless and Long Burning",
-    subtitle: "Wi Yone Charcoal can be used for",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    title: "Uses",
+    subtitle: "Coconut & Bamboo charcoal is used in a wide range of applications:",
+    description: "• BBQ and Grilling: The briquettes are popular in both household and commercial grills, providing long heat and clean flavor.\n• Hookah | Shisha: The cube briquettes are also widely used in global hookah markets for their steady burn and clean smoke.\n• Industrial: Some industries utilize in furnaces and kilns.\n  o Metallurgy: process to extract and refine metals, including iron from their ores\n• Air Purifiers & Filters: Powdered coconut and bamboo charcoal is also used for detoxifying air, water, and even in cosmetics."
   };
 
   // Data for the sizes section
   const sizesContent = {
-    title: "Sizes include",
-    sizes: "2kg, 5kg, 10kg, 15kg, 25kg, 100kg,"
+    title: "Sizes",
+    sizes: "2kg & 5kg bags: Bopp Laminated PP Woven, Top Open with Punched Handle, Stitch Bottom\n10kg bags: Bopp Laminated PP Woven, Full Open Top, Stitch Bottom\n15kg & 25kg bags: Coming Soon"
   };
 
   const [activeTab, setActiveTab] = useState("about");
@@ -82,10 +82,10 @@ export const Product = (): JSX.Element => {
                       <TabsContent value="about" className="mt-0">
                         <div className="text-white">
                           <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
-                            Made From Coconut Waste & <br className="hidden sm:block" /> Other Sources
+                            {aboutContent.title}
                           </h2>
                           
-                          <p className="font-normal text-sm sm:text-base leading-relaxed">
+                          <p className="font-normal text-sm sm:text-base leading-relaxed whitespace-pre-line">
                             {aboutContent.description}
                           </p>
                         </div>
@@ -95,14 +95,14 @@ export const Product = (): JSX.Element => {
                       {/* Uses Tab */}
                       <TabsContent value="uses" className="mt-0">
                         <div className="text-white">  
-                          <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-2 italic">
+                          <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
                             {usesContent.title}
                           </h2>
-                          <h3 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
+                          <h3 className="font-semibold font-sans text-lg sm:text-xl mb-4">
                             {usesContent.subtitle}
                           </h3>
                           
-                          <p className="font-normal text-sm sm:text-base leading-relaxed">
+                          <p className="font-normal text-sm sm:text-base leading-relaxed whitespace-pre-line">
                             {usesContent.description}
                           </p>
                         </div>
@@ -112,13 +112,13 @@ export const Product = (): JSX.Element => {
                       {/* Sizes Tab */}
                       <TabsContent value="sizes" className="mt-0">
                         <div className="text-white">
-                          <h3 className="font-normal font-sans text-sm sm:text-base mb-4">
+                          <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
                             {sizesContent.title}
-                          </h3>
-                          
-                          <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-                            {sizesContent.sizes}
                           </h2>
+                          
+                          <p className="font-normal text-sm sm:text-base leading-relaxed whitespace-pre-line">
+                            {sizesContent.sizes}
+                          </p>
                         </div>
                       </TabsContent>
                     </Tabs>

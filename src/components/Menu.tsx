@@ -11,10 +11,10 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
 
   const navigationItems = [
     { to: '/', label: 'HOME' },
+    { to: '/about', label: 'ABOUT ENVIR' },
     { to: '/product', label: 'PRODUCT' },
     { to: '/pricing', label: 'PRICING & TERMS' },
-    { to: '/stores', label: 'STORES' },
-    {to: '/about', label: 'ABOUT US'}
+    { to: '/stores', label: 'STORES' }
   ];
 
   const navLinkClasses = "block text-4xl sm:text-5xl md:text-7xl lg:text-6xl font-light text-black hover:opacity-70 transition-opacity uppercase tracking-tight";

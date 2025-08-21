@@ -48,7 +48,7 @@ export const Home: React.FC = () => {
           <Header />
           
           {/* coalsArtboard.svg bg */}
-          <section className="relative w-full min-h-[30vh] sm:min-h-[40vh] sm:mt-14 md:min-h-[40vh] lg:min-h-[40vh] xl:min-h-[80vh] lg:h-[90px] xl:h-[100px] bg-center bg-no-repeat" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}>
+          <section className="relative w-full min-h-[30vh] sm:min-h-[40vh] sm:mt-14 md:min-h-[40vh] lg:min-h-[80vh] xl:min-h-[80vh] lg:h-[90px] xl:h-[100px] bg-center bg-no-repeat" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}>
             <div className="absolute inset-0 bg-opacity-30"></div>
             <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
 
@@ -58,12 +58,13 @@ export const Home: React.FC = () => {
                   <img 
                     src="/fireforlonger.svg"
                     alt="Fire For Longer" 
-                    className="w-[110px] sm:w-[110px] md:w-[220px] lg:w-[250px] xl:w-[280px]"
+                    className="w-[90px] sm:w-[110px] md:w-[200px] lg:w-[250px] xl:w-[280px]"
                   />
                 </div>
 
                 {/* Right side - Product image */}
-                <div className="flex justify-center mt-16 sm:mt-36 md:-mt-12 lg:-mt-44 xl:-mt-10 2xl:-mt-72">
+                <div className="flex justify-center mt-16 sm:mt-36 md:-mt-12 lg:-mt-32 xl:-mt-52 2xl:-mt-72">
+
 
                   <img 
                     src="/WiYoneSample.svg" 
@@ -76,7 +77,7 @@ export const Home: React.FC = () => {
           </section>
 
           {/* First - right diagonal */}
-          <section className="relative w-full h-[150px] sm:h-[170px] md:h-[200px] lg:h-[200px] xl:h-[210px] -mt-20 sm:-mt-32 md:-mt-40 lg:-mt-20 xl:-mt-80 2xl:-mt-28 bg-gradient-to-l from-[#3D4647] to-[#212C2D] py-8 sm:py-0 transform sm:-skew-y-6 md:-skew-y-6 lg:-skew-y-6 -skew-y-6">
+          <section className="relative w-full h-[150px] sm:h-[170px] md:h-[200px] lg:h-[200px] xl:h-[210px] -mt-20 sm:-mt-32 md:-mt-40 lg:-mt-20 xl:-mt-20 2xl:-mt-28 bg-gradient-to-l from-[#3D4647] to-[#212C2D] py-8 sm:py-0 transform sm:-skew-y-6 md:-skew-y-6 lg:-skew-y-6 -skew-y-6">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 transform">
               <div className="text-center text-white h-12 sm:h-16 md:h-20">
               
