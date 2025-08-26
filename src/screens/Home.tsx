@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
+import  Footer  from "../components/Footer1";
 import { Button } from "../components/ui/button";
 import { storeService } from "../services/storeService";
 import { Store } from "./admin/AdminDashboard";
@@ -48,13 +48,13 @@ export const Home: React.FC = () => {
           <Header />
           
           {/* coalsArtboard.svg bg */}
-          <section className="relative w-full min-h-[30vh] sm:min-h-[40vh] sm:mt-14 md:min-h-[40vh] lg:min-h-[80vh] xl:min-h-[80vh] lg:h-[90px] xl:h-[100px] bg-center bg-no-repeat" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}>
+          <section className="relative w-full min-h-[30vh] sm:min-h-[40vh] sm:mt-14 md:min-h-[40vh] lg:min-h-[65vh] xl:min-h-[80vh] lg:h-[90px] xl:h-[100px] bg-center bg-no-repeat" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}>
             <div className="absolute inset-0 bg-opacity-30"></div>
             <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
 
               <div className="flex flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-12">
                 {/* Left side - Text content */}
-                <div className="-mt-16 sm:-mt-24 md:-mt-32 ml-8 sm:ml-10 lg:-mt-44 lg:ml-10 flex-shrink-0">
+                <div className="-mt-16 sm:-mt-24 md:-mt-32 ml-8 sm:ml-10 lg:-mt-64 lg:ml-10 flex-shrink-0">
                   <img 
                     src="/fireforlonger.svg"
                     alt="Fire For Longer" 
@@ -63,7 +63,7 @@ export const Home: React.FC = () => {
                 </div>
 
                 {/* Right side - Product image */}
-                <div className="flex justify-center mt-16 sm:mt-36 md:-mt-12 lg:-mt-32 xl:-mt-52 2xl:-mt-72">
+                <div className="flex justify-center mt-16 sm:mt-36 md:-mt-12 lg:-mt-52 xl:-mt-52 2xl:-mt-72">
 
 
                   <img 
@@ -77,7 +77,7 @@ export const Home: React.FC = () => {
           </section>
 
           {/* First - right diagonal */}
-          <section className="relative w-full h-[150px] sm:h-[170px] md:h-[200px] lg:h-[200px] xl:h-[210px] -mt-20 sm:-mt-32 md:-mt-40 lg:-mt-20 xl:-mt-20 2xl:-mt-28 bg-gradient-to-l from-[#3D4647] to-[#212C2D] py-8 sm:py-0 transform sm:-skew-y-6 md:-skew-y-6 lg:-skew-y-6 -skew-y-6">
+          <section className="relative w-full h-[100px] sm:h-[170px] md:h-[200px] lg:h-[200px] xl:h-[210px] -mt-20 sm:-mt-32 md:-mt-40 lg:-mt-20 xl:-mt-20 2xl:-mt-28 bg-gradient-to-l from-[#3D4647] to-[#212C2D] py-8 sm:py-0 transform sm:-skew-y-6 md:-skew-y-6 lg:-skew-y-6 -skew-y-6">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 transform">
               <div className="text-center text-white h-12 sm:h-16 md:h-20">
               
@@ -86,7 +86,7 @@ export const Home: React.FC = () => {
           </section>
 
           {/* left diagonal */}
-          <section className="relative w-full bg-gradient-to-r from-[#212C2D] to-[#3D4647] bg-[#3D4647] -mt-0 sm:-mt-8 md:-mt-6 xl:-mt-0 h-[150px] sm:h-[170px] md:h-[200px] lg:h-[200px] xl:h-[210px] py-8 sm:py-10 md:py-14 transform skew-y-6 sm:skew-y-6 md:skew-y-6 lg:skew-y-6">
+          <section className="relative w-full bg-gradient-to-r from-[#212C2D] to-[#3D4647] bg-[#3D4647] -mt-0 sm:-mt-8 md:-mt-6 xl:-mt-0 h-[100px] sm:h-[170px] md:h-[200px] lg:h-[200px] xl:h-[210px] py-8 sm:py-10 md:py-14 transform skew-y-6 sm:skew-y-6 md:skew-y-6 lg:skew-y-6">
             <div className="w-full transform">
               <div className="text-center text-white h-12 sm:h-16 md:h-28 overflow-hidden relative">
                 <div className="animate-marquee3 whitespace-nowrap absolute w-full">
@@ -254,7 +254,7 @@ export const Home: React.FC = () => {
 
           
           {/* Our Stores Section */}
-          <section className="w-full bg-[#EFE5D5] py-32 -mt-20">
+          <section className="w-full bg-[#EFE5D5] py-32 mb- -mt-20">
             <div className="container mx-auto px-4">
               <div className="flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 mb-8 md:mb-0 -mt-32 relative z-10">
@@ -308,7 +308,7 @@ export const Home: React.FC = () => {
               </div>
             </div>
             
-            <div className="-mb-20">
+            <div className="-mb-20 mt-12">
               <Footer />
             </div>
             {/* <Footer /> */}

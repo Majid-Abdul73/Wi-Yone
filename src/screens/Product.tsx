@@ -13,15 +13,14 @@ export const Product = (): JSX.Element => {
 
   // Data for the uses section
   const usesContent = {
-    title: "Uses",
-    subtitle: "Coconut & Bamboo charcoal is used in a wide range of applications:",
-    description: "• BBQ and Grilling: The briquettes are popular in both household and commercial grills, providing long heat and clean flavor.\n• Hookah | Shisha: The cube briquettes are also widely used in global hookah markets for their steady burn and clean smoke.\n• Industrial: Some industries utilize in furnaces and kilns.\n  o Metallurgy: process to extract and refine metals, including iron from their ores\n• Air Purifiers & Filters: Powdered coconut and bamboo charcoal is also used for detoxifying air, water, and even in cosmetics."
+    title: "Coconut & Bamboo charcoal is used in a wide range of applications:",
+    subtitle: "",
+    description: "• BBQ and Grilling: The briquettes are popular in both household and commercial grills, providing long heat and clean flavor.\n• Hookah | Shisha: The cube briquettes are also widely used in global hookah markets for their steady burn and clean smoke.\n• Industrial: Some industries utilize in furnaces and kilns.\n• Metallurgy: process to extract and refine metals, including iron from their ores\n• Air Purifiers & Filters: Powdered coconut and bamboo charcoal is also used for detoxifying air, water, and even in cosmetics."
   };
 
   // Data for the sizes section
   const sizesContent = {
-    title: "Sizes",
-    sizes: "2kg & 5kg bags: Bopp Laminated PP Woven, Top Open with Punched Handle, Stitch Bottom\n10kg bags: Bopp Laminated PP Woven, Full Open Top, Stitch Bottom\n15kg & 25kg bags: Coming Soon"
+    sizes: "2kg & 5kg bags:\n Bopp Laminated PP Woven, Top Open with Punched Handle, Stitch Bottom\n\n10kg bags:\n Bopp Laminated PP Woven, Full Open Top, Stitch Bottom\n\n15kg & 25kg bags:\n Coming Soon"
   };
 
   const [activeTab, setActiveTab] = useState("about");
@@ -81,7 +80,7 @@ export const Product = (): JSX.Element => {
                       {/* About Tab */}
                       <TabsContent value="about" className="mt-0">
                         <div className="text-white">
-                          <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
+                          <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-2xl lg:text-3xl mb-4 sm:mb-6">
                             {aboutContent.title}
                           </h2>
                           
@@ -95,7 +94,7 @@ export const Product = (): JSX.Element => {
                       {/* Uses Tab */}
                       <TabsContent value="uses" className="mt-0">
                         <div className="text-white">  
-                          <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
+                          <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-2xl lg:text-3xl mb-4 sm:mb-6">
                             {usesContent.title}
                           </h2>
                           <h3 className="font-semibold font-sans text-lg sm:text-xl mb-4">
@@ -111,15 +110,11 @@ export const Product = (): JSX.Element => {
 
                       {/* Sizes Tab */}
                       <TabsContent value="sizes" className="mt-0">
-                        <div className="text-white">
-                          <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
-                            {sizesContent.title}
-                          </h2>
-                          
+                        <div className="text-white"> 
                           <p className="font-normal text-sm sm:text-base leading-relaxed whitespace-pre-line">
                             {sizesContent.sizes}
                           </p>
-                        </div>
+                        </div> 
                       </TabsContent>
                     </Tabs>
                   </div>

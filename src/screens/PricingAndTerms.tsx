@@ -6,11 +6,11 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "../components/ui/tabs"
 
 export const PricingAndTerms = (): JSX.Element => {
   // Data for the specifications
-  const specifications = [
-    {
-      category: "Shisha/Hookah Charcoal",
+  const specifications = {
+    general: {
+      category: "General",
       details: [
-        "Types of Product: (100% PURE COCONUT or BAMBOO CHARCOAL BRIQUETTE)",
+        "Type of Product: (100% PURE COCONUT or BAMBOO CHARCOAL BRIQUETTE)",
         "Usage: Shisha | Hookah",
         "Raw Material: 100% Coconut or 100% Bamboo",
         "Grade: Premium | Shape: Cube",
@@ -23,8 +23,8 @@ export const PricingAndTerms = (): JSX.Element => {
         "Production: 100+ tons per month"
       ]
     },
-    {
-      category: "BBQ/Grilling Charcoal",
+    shisha: {
+      category: "Shisha",
       details: [
         "Types of Product: (100% PURE COCONUT or BAMBOO CHARCOAL BRIQUETTE)",
         "Usage: BBQ | Grilling | Cooking | Industrial",
@@ -39,7 +39,7 @@ export const PricingAndTerms = (): JSX.Element => {
         "Production: 100+ tons per month"
       ]
     }
-  ];
+  };
 
   // Pricing data
   const pricingOptions = [
@@ -48,20 +48,16 @@ export const PricingAndTerms = (): JSX.Element => {
       description: "Lamination with BOPP (Biaxially Oriented Polypropylene) film adds a protective layer that improves the material's resistance to tearing, moisture, and other environmental factors.\n\nPP woven bag is a type of packaging bag made from polypropylene (PP) that is woven together to create a strong and durable material. These bags are known for their strength, tear resistance, and ability to handle heavy loads, making them suitable for various industrial and agricultural applications. They are also lightweight and designed to be waterproof."
     },
     {
-      name: "Premium Shisha Charcoal",
+      name: "Price",
       price: "$1200-1500 per ton (Free On Board)",
       description: "Types of Product: (100% PURE COCONUT or BAMBOO CHARCOAL BRIQUETTE)",
       note: "Usage: Shisha | Hookah"
     },
     {
-      name: "BBQ Charcoal",
+      name: "Price",
       price: "USD $800 - $1000 per ton (Free On Board)",
       description: "Types of Product: (100% PURE COCONUT or BAMBOO CHARCOAL BRIQUETTE)",
       note: "Usage: BBQ | Grilling | Cooking | Industrial"
-    },
-    {
-      name: "Contact Information",
-      description: "Looking for an experienced and trusted BBQ/Grilling, Shisha, Industrial heating eco-friendly/sustainable/renewable charcoal for your private label brand.\n\nContact us to discuss further!\nWhatsApp: USA +19143360829 or +17209371705 | Sierra Leone +23274748876 or +23299200541\nEmail: care@wiyonecharcoal.com"
     }
   ];
 
@@ -69,23 +65,28 @@ export const PricingAndTerms = (): JSX.Element => {
   const termsCategories = [
     {
       title: "Minimum Order Quantity (MOQ) for Export",
-      content: "Shisha/Hookah Charcoal: 17-19 tons (1 x 20ft container, Full Container Load - FCL)\n\nBarbecue Charcoal: 17-19 tons (1 x 20ft container, Full Container Load - FCL)"
+      content: "• Shisha/Hookah Charcoal: 17-19 tons (1 x 20ft container, Full Container Load - FCL)\n• Barbecue Charcoal: 17-19 tons (1 x 20ft container, Full Container Load - FCL)"
     },
     {
       title: "Payment Terms",
-      content: "Payments are accepted exclusively via Telegraphic Transfer (Wire Transfer).\nA 50% advance payment is required upon signing the sales contract or submitting the purchase order.\nThe remaining 50% balance must be settled at least five days prior to the container loading schedule."
+      content: "• Payments are accepted exclusively via Telegraphic Transfer (Wire Transfer).\n• A 50% advance payment is required upon signing the sales contract or submitting the purchase order.\n• The remaining 50% balance must be settled at least five days prior to the container loading schedule."
     },
     {
       title: "Additional Notes",
-      content: "Prices are quoted based on FOB (Free on Board)\nThe quoted price includes export documentation, such as the Commercial Invoice, Packing List, and Bill of Lading."
+      content: "• Prices are quoted based on FOB (Free on Board)\n• The quoted price includes export documentation, such as the Commercial Invoice, Packing List, and Bill of Lading."
     },
     {
       title: "Productions Lead Time",
-      content: "The lead time for production varies based on order volume and packaging:\nCharcoal production time:\n10-15 days for a 20ft container\n15-20 days for a 40ft container\nPacking: 3-6 days\n\nOnce the shipment is dispatched, we will provide all necessary shipping documents, including the Bill of Lading, Commercial Invoice, and Packing List.\n\nWe encourage our future clients to schedule a visit our factory."
+      content: "• The lead time for production varies based on order volume and packaging:\n• Charcoal production time:\n• 10-15 days for a 20ft container\n• 15-20 days for a 40ft container."
     },
-  ];
+    {
+      title: "Packing: 3-6 days",
+      content: "• Once the shipment is dispatched, we will provide all necessary shipping documents, including the Bill of Lading, Commercial Invoice, and Packing List.\n• We encourage our future clients to schedule a visit our factory."
+    },
+   ];
 
   const [activeTab, setActiveTab] = useState("specifications");
+  const [activeSpecTab, setActiveSpecTab] = useState("general");
 
   return (
     <div className="bg-[#fff8ea] min-h-screen">
@@ -142,26 +143,56 @@ export const PricingAndTerms = (): JSX.Element => {
                       {/* specifications option */}
                       <TabsContent value="specifications" className="mt-0">
                         <div className="text-white">
-                          {/* <h2 className="font-bold font-sans text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
-                            PRODUCT SPECIFICATION
-                          </h2> */}
-                          
-                          <div className="space-y-6 sm:space-y-8">
-                            {specifications.map((spec, index) => (
-                              <div key={index} className="">
-                                <h3 className="font-semibold font-sans text-lg sm:text-xl md:text-2xl mb-3 sm:mb-4 text-[#ffe7b6]">
-                                  {spec.category}
-                                </h3>
+                          {/* Sub-tabs for General and Shisha */}
+                          <Tabs 
+                            defaultValue="general" 
+                            value={activeSpecTab}
+                            onValueChange={setActiveSpecTab}
+                            className="w-full mb-6"
+                          >
+                            <TabsList className="flex justify-start bg-transparent p-0 h-[40px] sm:h-[48px] mb-4 sm:mb-6">
+                              <TabsTrigger
+                                value="general"
+                                className="relative w-[100px] sm:w-[120px] h-[40px] sm:h-[48px] rounded-[50px] data-[state=active]:bg-[#ffe7b6] data-[state=active]:text-[#e15822] data-[state=inactive]:text-white data-[state=inactive]:bg-transparent data-[state=inactive]:border data-[state=inactive]:border-white mr-2"
+                              >
+                                <span className="font-sans font-semibold text-xs sm:text-sm text-center">
+                                  GENERAL
+                                </span>
+                              </TabsTrigger>
+                              <TabsTrigger
+                                value="shisha"
+                                className="relative w-[100px] sm:w-[120px] h-[40px] sm:h-[48px] rounded-[50px] data-[state=active]:bg-[#ffe7b6] data-[state=active]:text-[#e15822] data-[state=inactive]:text-white data-[state=inactive]:bg-transparent data-[state=inactive]:border data-[state=inactive]:border-white"
+                              >
+                                <span className="font-sans font-semibold text-xs sm:text-sm text-center">
+                                  SHISHA
+                                </span>
+                              </TabsTrigger>
+                            </TabsList>
+                            
+                            <TabsContent value="general" className="mt-0">
+                              <div className="space-y-1">
                                 <ul className="font-normal text-sm sm:text-base space-y-1">
-                                  {spec.details.map((detail, detailIndex) => (
+                                  {specifications.general.details.map((detail, detailIndex) => (
                                     <li key={detailIndex} className="leading-relaxed">
                                       {detail}
                                     </li>
                                   ))}
                                 </ul>
                               </div>
-                            ))}
-                          </div>
+                            </TabsContent>
+                            
+                            <TabsContent value="shisha" className="mt-0">
+                              <div className="space-y-1">
+                                <ul className="font-normal text-sm sm:text-base space-y-1">
+                                  {specifications.shisha.details.map((detail, detailIndex) => (
+                                    <li key={detailIndex} className="leading-relaxed">
+                                      {detail}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </TabsContent>
+                          </Tabs>
                         </div>
                       </TabsContent>
                       
@@ -170,10 +201,9 @@ export const PricingAndTerms = (): JSX.Element => {
                       <TabsContent value="pricing" className="mt-0">
                         <div className="text-white">
                           <h2 className="font-sans font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-4 sm:mb-6">
-                            Pricing
+                            The price of coconut shell charcoal depends on its specifications and packaging.
                           </h2>
                           <p className="font-sans text-white/90 text-sm sm:text-base mb-6">
-                            The price of charcoal depends on specification and packaging.
                           </p>
                           
                           <div className="space-y-4 sm:space-y-6">
@@ -188,25 +218,20 @@ export const PricingAndTerms = (): JSX.Element => {
                                       {option.description}
                                     </p>
                                   )}
-                                  {(option.name === "Premium Shisha Charcoal" || option.name === "BBQ Charcoal") && (
+                                  {(option.name === "Premium Shisha Charcoal" || option.name === "Price") && (
                                     <>
-                                      <p className="font-sans text-sm sm:text-base font-semibold">
-                                        Price: {option.price}
+                                      <p className="font-sans text-sm sm:text-base font-light">
+                                        {option.price}
                                       </p>
                                       <p className="font-sans text-sm sm:text-base mt-1">
                                         {option.description}
                                       </p>
                                       {option.note && (
-                                        <p className="font-sans text-xs sm:text-sm text-white/80 italic mt-1">
+                                        <p className="font-semibold text-sm sm:text-base mt-1">
                                           {option.note}
                                         </p>
                                       )}
                                     </>
-                                  )}
-                                  {option.name === "Contact Information" && (
-                                    <p className="font-sans text-white/90 text-sm sm:text-base whitespace-pre-line">
-                                      {option.description}
-                                    </p>
                                   )}
                                 </div>
                               </div>
@@ -232,13 +257,13 @@ export const PricingAndTerms = (): JSX.Element => {
                             ))}
                           </div>
                           
-                          <div className="mt-6 sm:mt-8">
+                          {/* <div className="mt-6 sm:mt-8">
                             <p className="font-sans text-white/80 text-sm sm:text-base">
                               Once the shipment is dispatched, we will provide all necessary shipping documents, 
                               including the Bill of Lading, Commercial Invoice, and Packing List. <br className="hidden sm:block" />
                               We encourage our future clients to schedule a visit our factory.
                             </p>
-                          </div>
+                          </div> */}
                         </div>
                       </TabsContent>
                     </Tabs>

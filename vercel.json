@@ -15,10 +15,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "src/main.tsx": {
-      "includeFiles": "dist/**"
-    }
-  }
+  ]
 }

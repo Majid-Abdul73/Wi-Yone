@@ -28,8 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ title }) => {
       {/* Center Title */}
       {title && (
         <div className="absolute left-1/2 transform -translate-x-1/2">
-          <h1 className="text-white font-mikoena font-bold text-xs sm:text-xs md:text-xs lg:text-xs xl:text-xs tracking-wider">
-
+          <h1 className="text-white font-mikoena font-bold text-xs sm:text-sm md:text-sm lg:text-sm xl:text-sm">
             {title}
           </h1>
         </div>
