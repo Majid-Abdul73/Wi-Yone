@@ -6,6 +6,7 @@ import { Home } from "./screens/Home";
 import { AboutUs } from "./screens/AboutUs";
 import { AdminDashboard } from './screens/admin/AdminDashboard';
 import { AuthProvider } from './contexts/AuthContext';
+import { Hero } from "./screens/Hero";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/pricing" element={<PricingAndTerms />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/hero" element={<Hero />} />
         </Routes>
       </Router>
     </AuthProvider>

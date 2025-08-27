@@ -47,14 +47,17 @@ export const Home: React.FC = () => {
         <div className="relative">
           <Header />
           
-          {/* coalsArtboard.svg bg */}
-          <section className="relative w-full min-h-[30vh] sm:min-h-[40vh] sm:mt-14 md:min-h-[40vh] lg:min-h-[65vh] xl:min-h-[80vh] lg:h-[90px] xl:h-[100px] bg-center bg-no-repeat" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}>
+          {/* coalsArtboard.svg bg with overlaid content */}
+          {/* <section className="relative w-full min-h-[30vh] sm:min-h-[40vh] sm:mt-14 md:min-h-[40vh] lg:min-h-[65vh] xl:min-h-[80vh] bg-center bg-no-repeat -skewy-6" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}> */}
+          <section className="relative w-full bg-center bg-no-repeat" style={{ backgroundImage: 'url(/coalsArtboard.svg)' }}>
             <div className="absolute inset-0 bg-opacity-30"></div>
-            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20">
-
+            
+            {/* Content positioned on top of coalsArtboard */}
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 -mt-40 md:mt20">
               <div className="flex flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-12">
-                {/* Left side - Text content */}
-                <div className="-mt-16 sm:-mt-24 md:-mt-32 ml-8 sm:ml-10 lg:-mt-64 lg:ml-10 flex-shrink-0">
+                {/* Left side - Fire For Longer */}
+                {/* <div className="-mt-16 sm:-mt-24 md:-mt-32 ml-8 sm:ml-10 lg:-mt-64 lg:ml-10 flex-shrink-0"> */}
+                <div className="ml-8 sm:ml-10 lg:ml-10 flex-shrink-0">
                   <img 
                     src="/fireforlonger.svg"
                     alt="Fire For Longer" 
@@ -62,22 +65,28 @@ export const Home: React.FC = () => {
                   />
                 </div>
 
-                {/* Right side - Product image */}
-                <div className="flex justify-center mt-16 sm:mt-36 md:-mt-12 lg:-mt-52 xl:-mt-52 2xl:-mt-72">
-
-
-                  <img 
-                    src="/WiYoneSample.svg" 
-                    alt="Wi Yone Charcoal Package" 
-                    className="max-w-full w-[400px] sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] xl:max-w-3xl h-auto"
-                  />
+                {/* Right side - Product image with star background */}
+                {/* <div className="flex justify-center mt-16 sm:mt-36 md:-mt-12 lg:-mt-60 xl:-mt-52 2xl:-mt-72 relative z-50"> */}
+                <div className="flex justify-center relative z-50">
+                  {/* Star background */}
+                  <div 
+                    className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-30"
+                    style={{ backgroundImage: 'url(/star-bg.svg)' }}
+                  ></div>
+                  <div className="mt-40 sm:mt-40 md:mt-40 lg:-mt-24">
+                    <img 
+                      src="/WiYoneSample.svg" 
+                      alt="Wi Yone Charcoal Package" 
+                      className="max-w-full w-[500px] sm:w-[600px] md:w-[600px] lg:w-[700px] xl:w-[800px] xl:max-w-3xl h-auto relative z-10"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </section>
 
           {/* First - right diagonal */}
-          <section className="relative w-full h-[100px] sm:h-[170px] md:h-[200px] lg:h-[200px] xl:h-[210px] -mt-20 sm:-mt-32 md:-mt-40 lg:-mt-20 xl:-mt-20 2xl:-mt-28 bg-gradient-to-l from-[#3D4647] to-[#212C2D] py-8 sm:py-0 transform sm:-skew-y-6 md:-skew-y-6 lg:-skew-y-6 -skew-y-6">
+          <section className="relative w-full h-[100px] sm:h-[170px] md:h-[200px] lg:h-[200px] xl:h-[210px] -mt-20 sm:-mt-32 md:-mt-40 lg:-mt-52 xl:-mt-[185px] 2xl:-mt-2 bg-gradient-to-l from-[#3D4647] to-[#212C2D] py-8 sm:py-0 transform sm:-skew-y-6 md:-skew-y-6 lg:-skew-y-6 -skew-y-6 z-0">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 transform">
               <div className="text-center text-white h-12 sm:h-16 md:h-20">
               
